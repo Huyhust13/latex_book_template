@@ -1,0 +1,138 @@
+\documentclass[a4paper,twoside]{book}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfig} % gói lệnh cho vẽ nhiều hình trong 1 hình
+%\usepackage{subcaption} % gói lệnh cho vẽ nhiều hình trong 1 hình
+\usepackage{wrapfig} % gói lệnh vẽ chèn hình vào giữa văn bản
+\usepackage{array}  % gói lệnh kẻ bảng với kích thước cố định
+\usepackage{tabu}
+\usepackage{tabularx} % in the preamble
+\usepackage{xcolor}
+\usepackage{enumerate} % gói lệnh danh sách
+\usepackage[unicode]{hyperref} % gói lệnh tạo liên kết
+\usepackage{indentfirst} % Thụt vào đầu mỗi đoạn
+\usepackage{pageborder}
+\usepackage{comment} %comment khoi lenh
+\usepackage{fancybox}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[left=3.5cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{scrextend}
+\changefontsizes{13pt} % đặt phông chữ kích thước 13
+\linespread{1.2}  % line space multiple 1.2
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\usepackage{listings} %Dùng cho định dạng khối lệnh
+
+% Thư viện và định nghĩa định dạng các khối
+\usepackage{tikz} %Thư viện vẽ hình
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text badly centered, draw=black, fill=green!30, aspect=2]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+% Định nghĩa định dạng code word, file name...
+\usepackage{xparse}
+\NewDocumentCommand{\codeword}{v}{%
+\texttt{\textcolor{black}{#1}}%
+}
+
+\lstset{
+ 	language=c++, %% Troque para PHP, C, Java, etc... bash é o padrão
+ 	basicstyle=\ttfamily\small,
+ 	numberstyle=\footnotesize,
+ 	% numbers=left,
+ 	backgroundcolor=\color{gray!10},
+ 	frame=single,
+ 	tabsize=2,
+ 	rulecolor=\color{black!30},
+ 	title=\lstname,
+ 	escapeinside={\%*}{*)},
+ 	breaklines=true,
+ 	breakatwhitespace=true,
+ 	framextopmargin=2pt,
+ 	framexbottommargin=2pt,
+ 	extendedchars=false,
+ 	showstringspaces=false,
+ 	inputencoding=utf8
+}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\footnotesize\nouppercase\rightmark} % Bên phải header: tên section
+\lhead{\footnotesize\nouppercase\leftmark} % Bên trái header: tên chapter
+\cfoot{\footnotesize\thepage} % Giữa footer: số trang
+
+\def \TITLE{Sách ROS}
+\def \AUTHOR{Nguyễn Xuân Hạ, Nguyễn Văn Huy, Ngô Thanh Tùng}
+
+\hypersetup{pdftitle={\TITLE},
+	pdfauthor={\AUTHOR}}
+
+\usepackage[all]{hypcap}
+\graphicspath{{figs/}{../figs/}}
+
+\author{Nguyễn Văn Huy}
+\setlength{\parindent}{0pt} % Dong nay ngan thut vao dau dong moi doan
+
+
+\makeindex
+
+\author{Nguyễn Văn Huy}
+
+
+% ============ BEGIN =================================
+\numberwithin{equation}{chapter} %đánh số theo chương
+\pagenumbering{gobble} % Trước trang đánh số không đánh số trang
+\begin{document}
+% \input{chapter0/Bia.tex}
+
+%\frontmatter
+
+\setcounter{page}{4} % Đặt vị trí bắt đầu đếm số trang
+\newpage
+
+% \input{chapter0/LoiMoDau}
+%\input{chapter0/DanhMucKyHieu}
+
+\tableofcontents % chèn mục  lục
+\addcontentsline{toc}{chapter}{MỤC LỤC}
+% \listoffigures % chèn danh sách hình
+% \addcontentsline{toc}{chapter}{DANH SÁCH HÌNH VẼ}
+% \listoftables % chèn danh sách bảng biểu
+% \addcontentsline{toc}{chapter}{DANH SÁCH BẢNG}
+
+\mainmatter
+\fancyhead[LO]{\leftmark}
+\cfoot{}
+\rfoot{\thepage}
+\lfoot{Nguyễn Văn Huy}
+\renewcommand{\headrulewidth}{2pt} % cho header
+\renewcommand{\footrulewidth}{2pt} % cho footer
+
+% \setcounter{page}{4} % Đặt vị trí bắt đầu đếm số trang
+
+%----Nội dung---------------------------------------
+\input{chapters/chapter-sample.tex}
+% \input{chapters/chapter34}
+% ----- Draft --------------------
+% \input{chapters/draft_reviewPapers}
+
+% ----Tài liệu tham khảo-----------------------------
+% \bibliographystyle{plain}
+\bibliographystyle{ieeetr}
+\bibliography{ref.bib}
+% ==============================
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

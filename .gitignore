@@ -1,0 +1,14 @@
+*.aux
+*bbl
+*blg
+*latexmk
+*fls
+*idx
+*ilg
+*ind
+*lof
+*lot
+*out
+*gz
+*toc
+*log
